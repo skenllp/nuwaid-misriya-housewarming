@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081A39" />
+    <meta
+      name="description"
+      content="House Warming Ceremony Invitation — Dr. Nuwaid &amp; Dr. Misriya at Baithul Hamd, Thaikadappuram"
+    />
+    <title>House Warming Invitation | Baithul Hamd</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Dr. Nuwaid &amp; Dr. Misriya | House Warming Ceremony"
+    />
+    <meta
+      property="og:description"
+      content="With hearts full of gratitude to Allah, we joyfully invite you to celebrate the House Warming Ceremony of our new home, Baithul Hamd."
+    />
+    <meta
+      property="og:image"
+      content="https://nuwaid-misriya-housewarming.vercel.app/og.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="House Warming Ceremony Invitation — Dr. Nuwaid &amp; Dr. Misriya, Baithul Hamd"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Dr. Nuwaid &amp; Dr. Misriya | House Warming Ceremony"
+    />
+    <meta
+      property="twitter:description"
+      content="With hearts full of gratitude to Allah, we joyfully invite you to celebrate the House Warming Ceremony of our new home, Baithul Hamd."
+    />
+    <meta property="twitter:image" content="https://nuwaid-misriya-housewarming.vercel.app/og.jpg" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Opening Doors Overlay -->
+    <div
+      id="opening"
+      class="opening"
+      role="button"
+      tabindex="0"
+      aria-label="Enter the invitation"
+    >
+      <div class="opening-panel opening-panel--left"></div>
+      <div class="opening-panel opening-panel--right"></div>
+      <span class="opening-seam" aria-hidden="true"></span>
+      <div class="opening-content">
+        <svg
+          class="opening-house-icon"
+          viewBox="0 0 64 64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M32 6L4 28v30h18V40h20v18h18V28L32 6z" />
+          <polygon points="32,6 60,28 55,28 32,10.5 9,28 4,28" />
+        </svg>
+        <p class="opening-eyebrow">House Warming Ceremony</p>
+        <div class="opening-arabic" lang="ar">بَيْتُ الْحَمْد</div>
+        <h2 class="opening-title">Baithul Hamd</h2>
+        <p class="opening-hint">Tap To Open The Doors</p>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <div class="audio-controller" id="audio-toggle" title="Play/Pause Music">
+      <svg id="audio-icon" viewBox="0 0 24 24">
+        <path
+          d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-8.09-.09L2.81 5.09 6.82 9H4v6h4l5 5v-6.83l4.88 4.88c-.62.47-1.31.85-2.08 1.09v2.01c1.3-.3 2.49-.93 3.47-1.76l2.62 2.62 1.41-1.41L4.82 2.81 3.91 3.91zM12 15.17L9.83 13H8v-2h1.83l.26-.26 1.91 1.91v2.52z"
+        />
+      </svg>
+      <audio id="bg-audio" loop>
+        <source src="music.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- HERO SECTION                                         -->
+    <!-- ---------------------------------------------------- -->
+    <header class="hero">
+      <div class="hero-bg">
+        <img
+          src="house.png"
+          alt="Baithul Hamd — House Warming"
+          id="heroImg"
+        />
+      </div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow">House Warming Ceremony</p>
+        <h1 class="hero-title hero-title-names">
+          Dr. Nuwaid<span class="hero-amp">&amp;</span>Dr. Misriya
+        </h1>
+
+        <div class="ornament-divider">
+          <span class="ornament-line"></span>
+          <span class="ornament-symbol">✦</span>
+          <span class="ornament-line"></span>
+        </div>
+
+        <p class="hero-subtitle">
+          "With hearts full of gratitude to Allah, we joyfully invite you to
+          share the happiness of our new beginning."
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-box">
+          <h3 class="countdown-title">Counting Down To The Celebration</h3>
+          <div class="countdown-grid" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">Min</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">Sec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">
+        <span>Scroll</span><span class="chevron"></span>
+      </div>
+    </header>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- OWNER DETAILS / ABOUT                                -->
+    <!-- ---------------------------------------------------- -->
+    <section class="about reveal">
+      <div class="container">
+        <div class="about-card">
+          <p class="section-eyebrow">With Love &amp; Gratitude</p>
+          <h2 class="greeting-text">Welcome To Our New Beginning</h2>
+
+          <!-- Arabic Greeting -->
+          <div class="arabic-greeting-block"> 
+            <p class="arabic-greeting-text" lang="ar">
+              السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ
+            </p>
+            <p class="arabic-greeting-translit">
+              Assalamu Alaikum Wa Rahmatullahi Wa Barakatuh
+            </p>
+          </div>
+
+          <!-- Invitation Message -->
+          <div class="invitation-block"> 
+            <p class="about-p">
+              With hearts full of gratitude to Allah (SWT), we joyfully invite you and your
+              family to join us for our House Warming Ceremony and share in our
+              happiness as we begin this new chapter of our lives.
+            </p>
+            <p class="about-p">
+              Your presence and duas will make this occasion truly special.
+            </p>
+          </div>
+
+          <!-- Hosted By -->
+          <div class="owner-grid">
+            <div class="owner-card">
+              <p class="owner-role">Hosted By</p>
+              <p class="owner-name">Dr. Nuwaid</p>
+            </div>
+            <div class="owner-card">
+              <p class="owner-role">Hosted By</p>
+              <p class="owner-name">Dr. Misriya</p>
+            </div>
+          </div>
+
+          <!-- Family Members -->
+          <div class="family-block"> 
+            <p class="family-label">With Love From Our Loved Ones</p>
+            <div class="family-names">
+              <span class="family-name">Nafil</span>
+              <span class="family-name">Ahmed</span>
+              <span class="family-name">Khadeeja</span>
+            </div>
+          </div>
+
+          <!-- Quran Verse -->
+          <div class="quote-container"> 
+            <p class="quran-arabic-text" lang="ar">
+              وَاللَّهُ جَعَلَ لَكُم مِّن بُيُوتِكُمْ سَكَنًا
+            </p> 
+            <p class="quote-text">
+              "And Allah has made for you from your homes a place of rest."
+            </p>
+            <p class="quote-author">— Surah An-Nahl (16:80)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- HOUSE NAME SECTION                                   -->
+    <!-- ---------------------------------------------------- -->
+    <section class="house-name-section reveal-zoom">
+      <div class="container">
+        <div class="house-icon-wrap">
+          <svg
+            class="house-icon"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M32 6L4 28v30h18V40h20v18h18V28L32 6z" />
+            <polygon points="32,6 60,28 55,28 32,10.5 9,28 4,28" />
+          </svg>
+        </div>
+        <p class="house-name-label">Dream Home of Dr. Nuwaid &amp; Dr. Misriya</p>
+        <div class="house-name-arabic" lang="ar">بَيْتُ الْحَمْد</div>
+        <h2 class="house-name">Baithul Hamd</h2>
+        <p class="house-name-sub">THAIKADAPPURAM</p>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- EVENT DETAILS                                        -->
+    <!-- ---------------------------------------------------- -->
+    <section class="details-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Event Details</h2>
+          <p>Mark your calendar and join us for an evening of celebration</p>
+        </div>
+        <div class="details-grid">
+          <!-- Date -->
+          <div class="detail-card">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
+                />
+              </svg>
+            </div>
+            <h3 class="detail-title">Date</h3>
+            <p class="detail-text detail-highlight">07 September 2026</p>
+            <p class="detail-text" style="font-size: 0.95rem; margin-top: 4px; font-weight: 600; color: #ffd97a;">
+              Monday
+            </p>
+            <p class="detail-text" style="font-size: 0.85rem; margin-top: 4px; color: var(--text-muted);">
+              25 Rabi ul Awwal 1448
+            </p>
+          </div>
+
+          <!-- Reception -->
+          <div class="detail-card">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+                />
+              </svg>
+            </div>
+            <h3 class="detail-title">Reception</h3>
+            <p class="detail-text detail-highlight">House Warming</p>
+            <p class="detail-text" style="font-size: 0.95rem; margin-top: 4px; font-weight: 600; color: #ffd97a;">
+              6:00 PM to 9:00 PM
+            </p>
+            <p class="detail-text" style="font-size: 0.85rem; margin-top: 4px; color: var(--text-muted);">
+              Evening Celebration &amp; Dinner
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- INVITATION CARD SHOWCASE                              -->
+    <!-- ---------------------------------------------------- -->
+    <section class="card-showcase-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Formal Invitation</h2>
+          <p>Heartly inviting you to celebrate with our loved ones</p>
+        </div>
+        <div class="card-showcase-wrapper">
+          <img
+            src="card.jpg"
+            alt="Dr. Nuwaid &amp; Dr. Misriya House Warming Invitation Card"
+            class="card-showcase-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- VENUE SECTION                                        -->
+    <!-- ---------------------------------------------------- -->
+    <section class="venue-section reveal" id="location">
+      <div class="container">
+        <div class="venue-card">
+          <div class="venue-body">
+            <div class="venue-pin">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+            </div>
+            <p class="venue-eyebrow">Join Us At</p>
+            <h2 class="venue-name">Baithul Hamd</h2>
+            <p class="venue-address">
+              Baithul Hamd, Thaikadappuram, Kerala — join us
+              as we open the doors of our new home for the very first time.
+            </p>
+            <a
+              href="https://maps.google.com/?q=12.237647,75.107765"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- CONTACT SECTION                                      -->
+    <!-- ---------------------------------------------------- -->
+    <section class="contact-section reveal">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 40px">
+          <h2>Hosts &amp; Location</h2>
+          <p>For any queries or directions, feel free to navigate directly</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-avatar">NM</div>
+            <div class="contact-name">Dr. Nuwaid &amp; Dr. Misriya</div>
+            <p class="contact-role">Hosts &bull; Baithul Hamd</p>
+            <p style="font-size: 0.9rem; color: #dfb264; margin-bottom: 22px; font-weight: 500;">
+              With Love: Nafil &bull; Ahmed &bull; Khadeeja
+            </p>
+
+            <div class="contact-buttons">
+              <a href="https://maps.google.com/?q=12.237647,75.107765" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 12px 28px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; vertical-align: -3px; margin-right: 6px;">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Get Directions on Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- FOOTER                                               -->
+    <!-- ---------------------------------------------------- -->
+    <footer class="footer">
+      <div class="container">
+        <svg
+          class="footer-icon"
+          viewBox="0 0 64 64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M32 6L4 28v30h18V40h20v18h18V28L32 6z" />
+          <polygon points="32,6 60,28 55,28 32,10.5 9,28 4,28" />
+        </svg>
+        <p class="footer-message">
+          We look forward to celebrating this memorable occasion with your
+          presence.
+        </p>
+        <p class="footer-love-label">With Love</p>
+        <p class="footer-names">Dr. Nuwaid &amp; Dr. Misriya</p>
+
+        <p class="footer-bottom">
+          &copy; 2026 Dr. Nuwaid &amp; Dr. Misriya. All Rights
+          Reserved. &mdash; Baithul Hamd
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

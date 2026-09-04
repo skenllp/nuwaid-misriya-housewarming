@@ -1,0 +1,10 @@
+{
+  "name": "House Warming Ceremony - Baithul Hamd",
+  "short_name": "Baithul Hamd",
+  "description": "House Warming Ceremony Invitation of Dr. Nuwaid & Dr. Misriya",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#081A39",
+  "theme_color": "#081A39",
+  "icons": []
+}
