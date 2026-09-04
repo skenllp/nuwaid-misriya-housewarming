@@ -15,18 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         } else {
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('has-opening');
         }
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         function finishOpening() {
             document.body.style.overflow = '';
+            document.body.classList.remove('has-opening');
             opening.classList.add('is-done');
             opening.remove();
-
-            if (window.gsap) {
-                gsap.from(".hero", { scale: 1.05, opacity: 0, duration: 1.2, ease: "power3.out" });
-                gsap.from(".hero-content > *", { y: 60, opacity: 0, stagger: 0.15, duration: 1, ease: "power3.out" });
-            }
         }
 
         function openDoors() {
@@ -47,6 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     .catch(err => {
                         console.log("Audio playback blocked by browser:", err);
                     });
+            // Smoothly reveal hero content as doors slide open
+            if (window.gsap && !prefersReducedMotion) {
+                gsap.fromTo(".hero-content > *", 
+                    { y: 40, opacity: 0 },
+                    { y: 0, opacity: 1, stagger: 0.12, duration: 1.1, delay: 0.2, ease: "power2.out", clearProps: "transform,opacity" }
+                );
             }
 
             window.setTimeout(finishOpening, prefersReducedMotion ? 0 : 1150);
