@@ -26,10 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
             opening.remove();
         }
 
-        function openDoors() {
+        function openDoors(e) {
             if (opening.classList.contains('is-open')) return;
             opening.classList.add('is-open');
             opening.removeEventListener('click', openDoors);
+            opening.removeEventListener('touchstart', openDoors);
             opening.removeEventListener('keydown', onOpeningKey);
 
             // Auto-play music after this first interaction (satisfies autoplay policy)
@@ -44,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     .catch(err => {
                         console.log("Audio playback blocked by browser:", err);
                     });
+            }
+
             // Smoothly reveal hero content as doors slide open
             if (window.gsap && !prefersReducedMotion) {
                 gsap.fromTo(".hero-content > *", 
-                    { y: 40, opacity: 0 },
+                    { y: 40, opacity: 0 }, 
                     { y: 0, opacity: 1, stagger: 0.12, duration: 1.1, delay: 0.2, ease: "power2.out", clearProps: "transform,opacity" }
                 );
             }
@@ -56,10 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function onOpeningKey(e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoors(); }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoors(e); }
         }
 
         opening.addEventListener('click', openDoors);
+        opening.addEventListener('touchstart', openDoors, { passive: true });
         opening.addEventListener('keydown', onOpeningKey);
     }
 

@@ -996,6 +996,9 @@ body.has-opening .hero-content > * {
     z-index: 99999;
     overflow: hidden;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    touch-action: manipulation;
 }
 .opening.is-done { display: none; }
 
@@ -1006,6 +1009,7 @@ body.has-opening .hero-content > * {
     overflow: hidden;
     transition: transform 1.15s cubic-bezier(0.25, 0.8, 0.25, 1);
     will-change: transform;
+    pointer-events: none;
 }
 .opening-panel::before {
     content: '';
@@ -1053,6 +1057,7 @@ body.has-opening .hero-content > * {
     padding: 0 clamp(16px, 6vw, 48px);
     transition: opacity 0.5s ease;
     background: radial-gradient(ellipse at 50% 50%, rgba(8, 26, 57, 0.55) 0%, transparent 70%);
+    pointer-events: none;
 }
 .opening.is-open .opening-content { opacity: 0; }
 
