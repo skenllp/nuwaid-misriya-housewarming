@@ -224,4 +224,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // 6. DIRECT ANCHOR SCROLL HELPER (URL param ?scroll=section-id)
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollTarget = urlParams.get('scroll');
+    if (scrollTarget) {
+        const el = document.getElementById(scrollTarget);
+        if (el) {
+            document.documentElement.style.scrollBehavior = 'auto';
+            document.querySelectorAll('.reveal, .reveal-zoom, .reveal-left, .reveal-right').forEach(e => {
+                e.classList.add('active');
+                e.style.transition = 'none';
+                e.style.opacity = '1';
+                e.style.transform = 'none';
+            });
+            window.scrollTo(0, el.offsetTop);
+        }
+    }
+
 });
